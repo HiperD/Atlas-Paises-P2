@@ -1,14 +1,12 @@
--- Seed de exemplo: inserir usuário e países de teste
--- Senha: 123456 (hash bcrypt pré-gerado)
 INSERT INTO users (name, username, password_hash)
 VALUES (
   'Usuario Teste',
   'admin',
-  '$2a$10$1bXCp5K3FqcHBQfYXLQkYOFlEK6J9.L0tPXr.W8VJ6EzI8nQE.qUK'
+  '$2a$10$1bXCp5K3FqcHBQfYXLQkYOFlEK6J9.L0tPXr.W8VJ6EzI8nQE.qUK' -- corresponde a 123456 e bcryptjs
 )
 ON CONFLICT (username) DO NOTHING;
 
--- Países de exemplo (alguns bem conhecidos)
+-- Países de exemplo:
 INSERT INTO countries (name, cca3, capital, region, population, area, flag_url)
 VALUES
   ('Brazil', 'BRA', 'Brasília', 'Americas', 215000000, 8514877, 'https://flagcdn.com/br.svg'),
